@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import type { SectionProps } from "@/types"
 
-export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText }: SectionProps) {
+export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, buttonLink }: SectionProps) {
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
       {subtitle && (
@@ -43,7 +43,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           <Button
             variant="outline"
             size="lg"
-            className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
+            className="text-[#E8003D] bg-transparent border-[#E8003D] hover:bg-[#E8003D] hover:text-white transition-colors text-lg px-8 py-6"
+            onClick={() => buttonLink && window.open(buttonLink, '_blank')}
           >
             {buttonText}
           </Button>
